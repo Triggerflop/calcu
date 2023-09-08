@@ -1,0 +1,22 @@
+name: calculator
+
+on: [push]
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Calculator
+      run: |
+        # Define your mathematical expression
+        expression="3 + 5 * 2"
+
+        # Use Python to evaluate the expression
+        result=$(python -c "print($expression)")
+
+        # Print the result
+        echo "Result of $expression is: $result"
